@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+@if(!Model.IsAlive())
+{
+  <h1>I am DEAD</h1>
+}
+<h1>Hello, my name is: @Model.GetName()</h1>
+<ul>
+  <li>My hunger level is: @Model.GetHunger()/100</li>
+  <li>My attention level is: @Model.GetAttention()/100</li>
+  <li>My rest level is: @Model.GetRest()/100</li>
+</ul>
+@if(Model.IsAlive())
+{
+  <a href="/TamagochiDetails/@Model.GetId()/Fed"><button type="button" class="btn-success">Feed me!</button></a>
+
+  <a href="/TamagochiDetails/@Model.GetId()/Attention"><button type="button" class="btn-success">Give me attention!</button></a>
+
+  <a href="/TamagochiDetails/@Model.GetId()/Rest"><button type="button" class="btn-success">Let me rest!</button></a>
+}
+
+
+<br>
+<br>
+<a href="/"><button type="button" name="button">Go home</button></a>
+<a href="/allTamagochis"><button type="button" name="button">View all my Tamagochis</button></a>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>All my Tamagochis!</title>
+</head>
+<body>
+  <h1>Here are my Tamagochis</h1>
+
+  <ul>
+      @foreach(var t in Model)
+  {
+    <li><a href="/TamagochiDetails/@t.GetId()">@t.GetName()</a>
+    @if(!t.IsAlive())
+    {
+       <span>- (Rest in peace)</span>
+    }
+    </li>
+  }
+  </ul>
+</body>
+</html>
